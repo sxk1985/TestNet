@@ -63,7 +63,7 @@ build:
     - script:
         name: go build
         code: |
-          go build
+          go build -o test main.go
 
     - script:
         name: go test
@@ -87,7 +87,5 @@ deploy:
       username: $DOCKER_USERNAME
       password: $DOCKER_PASSWORD
       cmd: /pipeline/source/test
-      port: "8080"
       tag: latest
       repository: kakatom/testing
-      registry: https://registry.hub.docker.com
